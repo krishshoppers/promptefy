@@ -123,11 +123,20 @@ const SOFTWARE_OPTIONS = [
 ];
 
 if (BOT_TOKEN && BOT_TOKEN !== 'YOUR_BOT_TOKEN_HERE') {
-  const bot = new TelegramBot(BOT_TOKEN, { polling: true });
+  // Start WITHOUT polling first, clear stale sessions, then start polling
+  const bot = new TelegramBot(BOT_TOKEN, { polling: false });
 
-  console.log('🤖 Telegram bot started');
+  // Kill any other active polling session before we start ours
+  bot.deleteWebHook({ drop_pending_updates: true }).then(() => {
+    bot.startPolling();
+    console.log('🤖 Telegram bot started (cleared stale sessions)');
+  }).catch(err => {
+    console.error('Failed to clear webhook:', err.message);
+    bot.startPolling();
+  });
 
   bot.on('polling_error', (err) => {
+    if (err.code === 'ETELEGRAM' && err.message.includes('409')) return; // ignore during deploy overlap
     console.error('Bot polling error:', err.code, err.message);
   });
 
