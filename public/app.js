@@ -2,10 +2,9 @@
   'use strict';
 
   /* ── CONFIG ── */
-  // When deployed, change this to your Railway URL (e.g., https://your-app.up.railway.app)
-  const API_BASE = window.location.hostname === 'localhost' ? '' : 'https://promptefy-production.up.railway.app';
-  const API_URL = `${API_BASE}/api/prompts`;
-  const TAGS_URL = `${API_BASE}/api/tags`;
+  // Netlify proxies /api/* to Railway — no CORS needed
+  const API_URL = '/api/prompts';
+  const TAGS_URL = '/api/tags';
   const grid = document.getElementById('prompts-grid');
   const skeletonGrid = document.getElementById('skeleton-grid');
   const empty = document.getElementById('empty');
