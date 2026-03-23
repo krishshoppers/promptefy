@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promptefy — AI Prompt Showcase</title>
+  <meta name="description" content="Discover premium AI image generation prompts for Midjourney, DALL-E, and more.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!-- ── NAVIGATION ── -->
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <img src="/assets/logo.png" alt="logo" class="brand-logo" width="28" height="28">
+        <span class="brand-name">PROMPTEFY</span>
+      </div>
+      <button id="menu-trigger" class="menu-trigger" aria-label="Menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ── SIDE DRAWER ── -->
+  <aside id="side-drawer" class="side-drawer">
+    <div id="drawer-overlay" class="drawer-overlay"></div>
+    <div class="drawer-content">
+      <h3 class="drawer-title">Categories</h3>
+      <ul id="tag-list" class="tag-list">
+        <li class="tag-link active" data-tag="all">All Prompts</li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata">
+      <source src="/assets/hero2.mp4" type="video/mp4">
+    </video>
+    <div class="hero-ui">
+      <img src="/assets/logo.png" alt="Promptefy" class="hero-logo" decoding="async" fetchpriority="low" width="80" height="80">
+      <h1 class="hero-title">PROMPTEFY</h1>
+      <p class="hero-tagline">IMAGE PROMPT GALLERY</p>
+    </div>
+  </section>
+
+  <!-- ── BRAND MARQUEE ── -->
+  <section class="marquee-section">
+    <div class="marquee-track">
+      <div class="marquee-inner">
+        <span class="marquee-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 12s1.5-4 4-4 4 4 4 4-1.5 4-4 4-4-4-4-4"/></svg>
+          ChatGPT
+        </span>
+        <span class="marquee-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12,2 22,8.5 22,15.5 12,22 2,15.5 2,8.5"/></svg>
+          Gemini
+        </span>
+        <span class="marquee-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 7l10 10M17 7L7 17"/></svg>
+          Midjourney
+        </span>
+        <span class="marquee-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg>
+          DALL·E
+        </span>
+        <span class="marquee-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v16H4z"/><path d="M9 9h6v6H9z"/></svg>
+          Stable Diffusion
+        </span>
+        <span class="marquee-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7v10l10 5 10-5V7z"/></svg>
+          Leonardo AI
+        </span>
+        <span class="marquee-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.2 4.2l2.8 2.8M17 17l2.8 2.8M1 12h4M19 12h4M4.2 19.8l2.8-2.8M17 7l2.8-2.8"/></svg>
+          Firefly
+        </span>
+        <span class="marquee-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path d="M9 12l2 2 4-4"/></svg>
+          Runway
+        </span>
+        <!-- Duplicate for seamless loop -->
+        <span class="marquee-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 12s1.5-4 4-4 4 4 4 4-1.5 4-4 4-4-4-4-4"/></svg>
+          ChatGPT
+        </span>
+        <span class="marquee-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12,2 22,8.5 22,15.5 12,22 2,15.5 2,8.5"/></svg>
+          Gemini
+        </span>
+        <span class="marquee-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 7l10 10M17 7L7 17"/></svg>
+          Midjourney
+        </span>
+        <span class="marquee-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg>
+          DALL·E
+        </span>
+        <span class="marquee-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v16H4z"/><path d="M9 9h6v6H9z"/></svg>
+          Stable Diffusion
+        </span>
+        <span class="marquee-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7v10l10 5 10-5V7z"/></svg>
+          Leonardo AI
+        </span>
+        <span class="marquee-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.2 4.2l2.8 2.8M17 17l2.8 2.8M1 12h4M19 12h4M4.2 19.8l2.8-2.8M17 7l2.8-2.8"/></svg>
+          Firefly
+        </span>
+        <span class="marquee-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path d="M9 12l2 2 4-4"/></svg>
+          Runway
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SEARCH BAR ── -->
+  <section class="search-section">
+    <div class="search-wrap">
+      <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="search-input" class="search-input" placeholder="Search prompts, titles, tags..." autocomplete="off">
+    </div>
+  </section>
+
+  <!-- ── MODEL CATEGORIES ── -->
+  <section class="category-section">
+    <div class="category-track" id="category-track">
+      <button class="category-chip active" data-model="all">All</button>
+      <button class="category-chip trending-chip" data-model="trending">🔥 Trending</button>
+      <button class="category-chip" data-model="ChatGPT">ChatGPT</button>
+      <button class="category-chip" data-model="Gemini">Gemini</button>
+      <button class="category-chip" data-model="Midjourney">Midjourney</button>
+      <button class="category-chip" data-model="DALL·E">DALL·E</button>
+      <button class="category-chip" data-model="Stable Diffusion">Stable Diffusion</button>
+      <button class="category-chip" data-model="Leonardo AI">Leonardo AI</button>
+      <button class="category-chip" data-model="Adobe Firefly">Firefly</button>
+      <button class="category-chip" data-model="Runway">Runway</button>
+      <button class="category-chip" data-model="Flux">Flux</button>
+      <button class="category-chip" data-model="Copilot">Copilot</button>
+    </div>
+  </section>
+
+  <!-- ── MAIN CONTENT ── -->
+  <main>
+    <!-- Skeleton Loading -->
+    <div id="skeleton-grid" class="grid">
+      <div class="skeleton-card"><div class="sk-media"></div><div class="sk-body"><div class="sk-line w60"></div><div class="sk-line w80"></div><div class="sk-line w40"></div></div></div>
+      <div class="skeleton-card"><div class="sk-media"></div><div class="sk-body"><div class="sk-line w80"></div><div class="sk-line w60"></div><div class="sk-line w40"></div></div></div>
+      <div class="skeleton-card"><div class="sk-media"></div><div class="sk-body"><div class="sk-line w60"></div><div class="sk-line w80"></div><div class="sk-line w40"></div></div></div>
+    </div>
+
+    <div id="prompts-grid" class="grid" style="display: none;">
+      <!-- Cards injected by app.js -->
+    </div>
+
+    <div id="empty" class="empty-state" style="display: none; text-align: center; padding: 100px 0;">
+      <p style="color: var(--dim); letter-spacing: 0.1em; font-size: 0.85rem;">NO PROMPTS FOUND</p>
+    </div>
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-brand">
+      <img src="/assets/logo.png" alt="Promptefy" class="footer-logo" width="40" height="40">
+      <span class="footer-brand-name">PROMPTEFY</span>
+    </div>
+    <p class="footer-tagline">Stop Guessing. Start Generating</p>
+    <div class="footer-links">
+      <a href="https://instagram.com/krr.iiiish" class="footer-link">INSTAGRAM</a>
+      <span class="footer-dot">·</span>
+      <a href="https://t.me/northframe" class="footer-link">TELEGRAM</a>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-cp">© 2026 PROMPTEFY — FOUNDED BY <strong>KRISH</strong></span>
+      <span class="version-badge">v0.1 beta</span>
+    </div>
+  </footer>
+
+  <!-- ── SCROLL TO TOP ── -->
+  <button id="btn-top" class="btn-top" aria-label="Scroll to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="/app.js"></script>
+</body>
+</html>
