@@ -53,7 +53,7 @@
     try {
       const [promptsRes, tagsRes] = await Promise.all([
         fetch(API_URL),
-        fetch('/api/tags')
+        fetch(TAGS_URL)
       ]);
 
       allPrompts = await promptsRes.json();
