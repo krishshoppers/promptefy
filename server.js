@@ -127,6 +127,10 @@ if (BOT_TOKEN && BOT_TOKEN !== 'YOUR_BOT_TOKEN_HERE') {
 
   console.log('🤖 Telegram bot started');
 
+  bot.on('polling_error', (err) => {
+    console.error('Bot polling error:', err.code, err.message);
+  });
+
   function isAdmin(chatId) {
     if (!ADMIN_ID || ADMIN_ID === 'YOUR_TELEGRAM_USER_ID') return true;
     return String(chatId) === String(ADMIN_ID);
