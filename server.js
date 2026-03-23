@@ -14,7 +14,16 @@ const PORT = process.env.PORT || 3000;
 const BOT_TOKEN = process.env.BOT_TOKEN;
 const ADMIN_ID = process.env.ADMIN_ID;
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    'https://promptefy.us.cc',
+    'https://www.promptefy.us.cc',
+    'https://promptefy-gallery.netlify.app',
+    'http://localhost:3000'
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
