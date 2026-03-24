@@ -1,0 +1,31 @@
+[
+  {
+    "title": "Bg blur",
+    "originalImage": "https://api.telegram.org/file/bot8526839894:AAH8P5nCduhYaKHcjj26TaltG60EP7X7UQI/photos/file_56.jpg",
+    "enhancedImage": "https://api.telegram.org/file/bot8526839894:AAH8P5nCduhYaKHcjj26TaltG60EP7X7UQI/photos/file_57.jpg",
+    "tags": [
+      "Portrait"
+    ],
+    "software": "Gemini",
+    "prompt": "Use the uploaded image as the base image.\nDo not change the person, face, pose, outfit, framing or angle — everything must remain exactly the same (100% face match, no alterations).\nEnhance the image to ultra-high resolution with refined sharpness and natural skin detail.\nApply a professional DSLR-style shallow depth of field effect — strong creamy background blur (full bokeh effect), smooth lens blur on water, hills and sky, clear subject separation, sharp focus locked on the face and upper body.\nMaintain natural lighting, realistic skin texture with soft glow, clean contrast, cinematic color grading, depth enhancement, premium portrait finish.\nUltra-realistic, photorealistic, high-detail, strong background blur, subject tack sharp, no new elements, no pose change, no object removal, no text, no logos, no watermark.",
+    "id": "mn3aa0owp61b",
+    "createdAt": "2026-03-23T14:31:05.984Z",
+    "serialNumber": 1,
+    "pinned": false
+  },
+  {
+    "title": "Day to night",
+    "originalImage": "https://api.telegram.org/file/bot8526839894:AAH8P5nCduhYaKHcjj26TaltG60EP7X7UQI/photos/file_58.jpg",
+    "enhancedImage": "https://api.telegram.org/file/bot8526839894:AAH8P5nCduhYaKHcjj26TaltG60EP7X7UQI/photos/file_59.jpg",
+    "tags": [
+      "Night"
+    ],
+    "software": "Gemini",
+    "prompt": "Use the uploaded image as the exact reference. Recreate the same composition, pose, framing, and perspective. Convert the scene into a realistic nighttime environment with natural dark blue night tones. Add subtle road or street lights in the background with a soft glow and deepen the background shadows. Illuminate the person slightly with soft ambient light (as if from a nearby street light) so the face and upper body are clearly visible while still maintaining a natural night look. Place 2–3 small faint stars in the sky. Ensure the result looks realistic, cinematic, and believable with balanced night lighting, not over-edited or artificial.",
+    "serialNumber": 2,
+    "id": "mn3bugdse0c2",
+    "createdAt": "2026-03-23T15:14:59.056Z",
+    "pinned": true,
+    "trending": true
+  }
+]
