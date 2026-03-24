@@ -28,6 +28,7 @@
   function toggleDrawer(open) {
     sideDrawer.classList.toggle('active', open);
     document.body.classList.toggle('menu-open', open);
+    menuTrigger.setAttribute('aria-expanded', String(open));
   }
 
   menuTrigger.addEventListener('click', () => toggleDrawer(true));
@@ -189,8 +190,8 @@
     el.innerHTML = `
       <div class="card-media">
         ${serialNum ? `<span class="serial-badge">${serialNum}</span>` : ''}
-        <img src="${p.originalImage}" class="card-img img-before" alt="Before" loading="lazy" decoding="async" fetchpriority="low">
-        <img src="${p.enhancedImage}" class="card-img img-overlay" alt="After" loading="lazy" decoding="async" fetchpriority="low">
+        <img src="${p.originalImage}" class="card-img img-before" alt="${(p.title || 'Prompt').replace(/"/g, '&quot;')} — Original image before AI enhancement" loading="lazy" decoding="async" fetchpriority="low">
+        <img src="${p.enhancedImage}" class="card-img img-overlay" alt="${(p.title || 'Prompt').replace(/"/g, '&quot;')} — AI enhanced result using ${p.software || 'AI'}" loading="lazy" decoding="async" fetchpriority="low">
         <div class="card-divider"></div>
       </div>
       <div class="card-body">

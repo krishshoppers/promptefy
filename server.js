@@ -165,6 +165,11 @@ if (BOT_TOKEN && BOT_TOKEN !== 'YOUR_BOT_TOKEN_HERE') {
     return `${filled}${empty}  ${current}/${total}`;
   }
 
+  function esc(text) {
+    if (!text) return '';
+    return String(text).replace(/([_*`\[])/g, '\\$1');
+  }
+
   // ── Welcome / Home ──
   function sendHome(chatId) {
     sessions[chatId] = null;
@@ -265,7 +270,7 @@ if (BOT_TOKEN && BOT_TOKEN !== 'YOUR_BOT_TOKEN_HERE') {
       return bot.sendMessage(chatId,
         `🎉 *PUBLISHED!*\n` +
         `━━━━━━━━━━━━━━━━━━\n\n` +
-        `✦ *${saved.title}*\n` +
+        `✦ *${esc(saved.title)}*\n` +
         `📌 Serial: #${String(saved.serialNumber).padStart(3, '0')}\n\n` +
         `Your prompt is now live on the website!`,
         MAIN_KEYBOARD
@@ -396,7 +401,7 @@ if (BOT_TOKEN && BOT_TOKEN !== 'YOUR_BOT_TOKEN_HERE') {
         session.data.title = text;
         session.step = 'original_image';
         return bot.sendMessage(chatId,
-          `✅ Title: *${session.data.title}*\n\n` +
+          `✅ Title: *${esc(session.data.title)}*\n\n` +
           `${stepBar(2, 6)}\n\n` +
           `🖼 *Step 2 — Original Image*\n` +
           `━━━━━━━━━━━━━━━━━━\n\n` +
@@ -450,7 +455,7 @@ if (BOT_TOKEN && BOT_TOKEN !== 'YOUR_BOT_TOKEN_HERE') {
         }
 
         return bot.sendMessage(chatId,
-          `✅ Tags: *${session.data.tags.join(', ')}*\n\n` +
+          `✅ Tags: *${esc(session.data.tags.join(', '))}*\n\n` +
           `${stepBar(5, 6)}\n\n` +
           `💻 *Step 5 — Software*\n` +
           `━━━━━━━━━━━━━━━━━━\n\n` +
@@ -468,10 +473,10 @@ if (BOT_TOKEN && BOT_TOKEN !== 'YOUR_BOT_TOKEN_HERE') {
         const previewText =
           `📋 *PREVIEW*\n` +
           `━━━━━━━━━━━━━━━━━━\n\n` +
-          `*Title:* ${d.title}\n` +
-          `*Tags:* ${d.tags.join(', ')}\n` +
+          `*Title:* ${esc(d.title)}\n` +
+          `*Tags:* ${esc(d.tags.join(', '))}\n` +
           `*Software:* ${d.software}\n\n` +
-          `*Prompt:*\n${d.prompt.substring(0, 300)}${d.prompt.length > 300 ? '...' : ''}\n\n` +
+          `*Prompt:*\n\`\`\`\n${d.prompt.substring(0, 300)}${d.prompt.length > 300 ? '...' : ''}\n\`\`\`\n\n` +
           `━━━━━━━━━━━━━━━━━━\n` +
           `_Ready to publish?_`;
 

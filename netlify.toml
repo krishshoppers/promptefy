@@ -17,12 +17,35 @@
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml; charset=utf-8"
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=3600"
+
 # Proxy API requests to Railway — eliminates CORS entirely
 [[redirects]]
   from = "/api/*"
   to = "https://promptefy-production.up.railway.app/api/:splat"
   status = 200
   force = true
+
+# Serve static SEO files directly (before SPA fallback)
+[[redirects]]
+  from = "/robots.txt"
+  to = "/robots.txt"
+  status = 200
+
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap.xml"
+  status = 200
 
 # SPA fallback — must be LAST
 [[redirects]]
